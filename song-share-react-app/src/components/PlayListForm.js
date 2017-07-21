@@ -2,6 +2,16 @@ import React, { Component } from "react";
 import "../styles/App.css";
 
 class PlayListForm extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      userName: "",
+      songArtist: "",
+      songTitle: "",
+      SongNotes: ""
+    };
+  }
+
   addToList = e => {
     e.preventDefault();
     this.setState({
