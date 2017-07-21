@@ -1,4 +1,4 @@
-import React, {component} from 'react';
+import React, {Component} from 'react';
 import "../styles/App.css";
 
 class NavBar extends Component{
@@ -7,7 +7,6 @@ class NavBar extends Component{
             <div className="topNav">
                 <h1 class="header">Play Now?!</h1>
                 </div>
-
         );
     }
 }
