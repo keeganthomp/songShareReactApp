@@ -2,16 +2,6 @@ import React, { Component } from "react";
 import "../styles/App.css";
 
 class PlayListForm extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      userName: "",
-      songArtist: "",
-      songTitle: "",
-      SongNotes: ""
-    };
-  }
-
   addToList = e => {
     e.preventDefault();
     this.setState({
@@ -24,14 +14,14 @@ class PlayListForm extends Component {
 
     fetch("https://tiny-lasagna-server.herokuapp.com/collections/playlisting", {
       method: "POST",
-      body: listItem,
+      body: listItem.JSON,
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json"
       }
     })
       .then(response => {
-        console.log(response, "yay");
+        alert("yay, you posted data");
       })
       .catch(err => {
         console.log(err, "boo!");
@@ -46,15 +36,24 @@ class PlayListForm extends Component {
 
   render() {
     return (
-      <form>
-        <label>User Name:</label>
-        <input type="artist" />
-        <label>User Name:</label>
-        <input type="artist" />
-        <label>User Name:</label>
-        <input type="artist" />
-        <label>User Name:</label>
-        <input type="artist" />
+      <form className="formData">
+        <div>
+          <label>User Name:</label>
+          <input type="artist" />
+        </div>
+        <div>
+          <label>User Name:</label>
+          <input type="artist" />
+        </div>
+        <div>
+          <label>User Name:</label>
+          <input type="artist" />
+        </div>
+        <div>
+          <label>User Name:</label>
+          <input type="artist" />
+        </div>
+        <input type="submit" onClick={this.addToList} />
       </form>
     );
   }

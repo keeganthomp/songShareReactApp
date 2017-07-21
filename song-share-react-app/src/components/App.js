@@ -21,7 +21,7 @@ class App extends Component {
     return (
       <div className="App">
         <NavBar />
-        <PlayListForm />
+        <PlayListForm addToDb={this.addToList} />
         <PlayList />
       </div>
     );
