@@ -36,21 +36,25 @@ class PlayListForm extends Component {
 
   render() {
     return (
-      <form className="formData">
+      <form className="formData width">
         <div>
-          <label>User Name:</label>
+          <label className="formLabel">User Name:</label>
+          <br />
           <input type="artist" />
         </div>
         <div>
-          <label>User Name:</label>
+          <label className="formLabel">User Name:</label>
+          <br />
           <input type="artist" />
         </div>
         <div>
-          <label>User Name:</label>
+          <label className="formLabel">User Name:</label>
+          <br />
           <input type="artist" />
         </div>
         <div>
-          <label>User Name:</label>
+          <label className="formLabel">User Name:</label>
+          <br />
           <input type="artist" />
         </div>
         <input type="submit" onClick={this.addToList} />

@@ -6,23 +6,15 @@ import PlayListForm from "./PlayListForm";
 import PlayList from "./PlayList";
 
 class App extends Component {
-  fetchData = e => {
-    e.preventDefault();
-    fetch("https://tiny-lasagna-server.herokuapp.com/collections/playlisting")
-      .then(results => {
-        return results.json();
-      })
-      .then(data => {
-        this.setState({ songs: data });
-      });
-  };
 
   render() {
     return (
       <div className="App">
         <NavBar />
-        <PlayListForm addToDb={this.addToList} />
-        <PlayList />
+        <div className="musicData">
+          <PlayListForm className="width" addToDb={this.addToList} />
+          <PlayList className="width" />
+        </div>
       </div>
     );
   }

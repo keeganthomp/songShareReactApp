@@ -6,17 +6,29 @@ class PlayList extends Component {
     let songs = this.props.songs.map(songs => {
       return (
         <div className="songs" key={songs._id}>
-          <p>User:{songs.songTitle}</p>
-          <p>Artist:{songs.songTitle}</p>
-          <p>Title:{songs.songTitle}</p>
-          <p>Notes:{songs.songNotes}</p>
+          <p>
+            <span className="songLabel">User:</span>
+            {songs.songTitle}
+          </p>
+          <p>
+            <span className="songLabel">Artist:</span>
+            {songs.songTitle}
+          </p>
+          <p>
+            <span className="songLabel">Title:</span>
+            {songs.songTitle}
+          </p>
+          <p>
+            <span className="songLabel">Notes:</span>
+            {songs.songNotes}
+          </p>
         </div>
       );
     });
     return (
-        <div className="songItem">
-            {songs}
-            </div>
+      <div className="songItem">
+        {songs}
+      </div>
     );
   }
 }
