@@ -16,7 +16,7 @@ class PlayList extends Component {
       })
       .then(data => {
         this.setState({ songs: data });
-        // console.log("SONGS:", this.state.songs);
+        console.log("SONGS:", this.state.songs);
       });
   }
 
@@ -28,6 +28,7 @@ class PlayList extends Component {
       })
       .then(data => {
         this.setState({ songs: data });
+        console.log("songs:", this.state.songs)
       });
   };
 

@@ -2,19 +2,25 @@ import React, { Component } from "react";
 import "../styles/App.css";
 
 class PlayListForm extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      newTrack: {}
+    };
+  }
+
+  updateTrack = e => {
+    let newTrack = this.state.newTrack;
+    newTrack[e.target.value] = e.target.value;
+    this.setState({ newTrack });
+  };
+
   addToList = e => {
     e.preventDefault();
-    this.setState({
-      userName: e.target.value,
-      songTitle: e.target.value,
-      songArtist: e.target.value,
-      songNotes: e.target.value
-    });
-    let listItem = JSON.stringify(this.state);
 
     fetch("https://tiny-lasagna-server.herokuapp.com/collections/playlisting", {
       method: "POST",
-      body: listItem.JSON,
+      body: this.state.newTrack,
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json"
@@ -57,7 +63,7 @@ class PlayListForm extends Component {
           <br />
           <input type="artist" />
         </div>
-        <input type="submit" onClick={this.addToList} />
+        <input type="submit" onClick={this.updateTrack} />
       </form>
     );
   }
