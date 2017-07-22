@@ -1,5 +1,5 @@
 .App {
-  text-align: center;
+  /*text-align: center;*/
 }
 
 .App-logo {
@@ -24,17 +24,34 @@
 }
 
 
+.submitForm {
+  -webkit-appearance: none;
+  background: #1578DC;
+  border: none;
+  color: white;
+  padding: 10px 10px 10px 10px;
+  font-size: 1.25rem;
+  border-radius: 5px;
+}
+
 
 .songs {
   background: #70BBEB;
   border-radius: 10px;
   padding: 25px;
-  margin: 15px;
+  margin: 15px 0 15px 0;
 }
 
 .topNav {
   background: #1683D1;
   color: white;
+  padding: 2% 2% 2% 4%;
+  margin: 0 3% 5% 3%;
+}
+
+h1 {
+  margin: 0 0 5% 0;
+  font-size: 3rem;
 }
 
 .musicData {
@@ -47,13 +64,50 @@
   width: 30%;
 }
 
+.formInput {
+  width: 100%;
+  border-radius: 5px;
+  font-size: 1.5rem;
+}
+
+.formNotes{
+  width: 100%;
+  border-radius: 5px;
+  font-size: 1.5rem;
+  height: 5rem;
+}
+
+.formDiv {
+  margin: 0 0 3% 0;
+}
+
+.updateButton {
+  -webkit-appearance: none;
+  border: none;
+  background: #38BA54;
+  color: white;
+  font-size: 1.25rem;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.updateButton:hover{
+  cursor: pointer
+}
+
+.submitForm:hover{
+  cursor: pointer
+}
+
 .songLabel {
   font-weight: bold;
   color: white;
 }
 
 
+
 .formLabel {
   color: white;
   width: 100%;
+  text-align: left;
 }

@@ -5,7 +5,7 @@ class NavBar extends Component{
     render(){
         return(
             <div className="topNav">
-                <h1 className="header">Play Now?!</h1>
+                <h1 className="header">Play What?!</h1>
                 </div>
         );
     }

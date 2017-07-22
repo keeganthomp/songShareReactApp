@@ -13,11 +13,7 @@ class PlayListForm extends Component {
     let newTrack = this.state.newTrack;
     newTrack[e.target.value] = e.target.value;
     this.setState({ newTrack });
-  };
-
-  addToList = e => {
-    e.preventDefault();
-
+    console.log(this.state.newTrack);
     fetch("https://tiny-lasagna-server.herokuapp.com/collections/playlisting", {
       method: "POST",
       body: this.state.newTrack,
@@ -43,27 +39,31 @@ class PlayListForm extends Component {
   render() {
     return (
       <form className="formData width">
-        <div>
+        <div className="formDiv">
           <label className="formLabel">User Name:</label>
           <br />
-          <input type="artist" />
+          <input className="formInput" type="text" />
         </div>
-        <div>
-          <label className="formLabel">User Name:</label>
+        <div className="formDiv">
+          <label className="formLabel">Artist/Band:</label>
           <br />
-          <input type="artist" />
+          <input className="formInput" type="text" />
         </div>
-        <div>
-          <label className="formLabel">User Name:</label>
+        <div className="formDiv">
+          <label className="formLabel">Song Title:</label>
           <br />
-          <input type="artist" />
+          <input className="formInput" type="text" />
         </div>
-        <div>
-          <label className="formLabel">User Name:</label>
+        <div className="formDiv">
+          <label className="formLabel">Notes About Song:</label>
           <br />
-          <input type="artist" />
+          <textarea className="formNotes" type="text" />
         </div>
-        <input type="submit" onClick={this.updateTrack} />
+        <input
+          className="submitForm"
+          type="submit"
+          onClick={this.updateTrack}
+        />
       </form>
     );
   }

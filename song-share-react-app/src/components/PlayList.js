@@ -21,14 +21,14 @@ class PlayList extends Component {
   }
 
   fetchData = e => {
-    e.preventDefault();
+    // e.preventDefault();
     fetch("https://tiny-lasagna-server.herokuapp.com/collections/playlisting")
       .then(results => {
         return results.json();
       })
       .then(data => {
         this.setState({ songs: data });
-        console.log("songs:", this.state.songs)
+        console.log("songs from clicking 'update button':", this.state.songs)
       });
   };
 
@@ -36,7 +36,7 @@ class PlayList extends Component {
     return (
       <div className="width">
         <form>
-          <input type="submit" onClick={this.fetchData} value="update" />
+          <input className="updateButton" type="button" onClick={this.fetchData} value="update" />
         </form>
         <div>
           <PlayListItem songs={this.state.songs} />
